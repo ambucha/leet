@@ -2,8 +2,9 @@ class Solution {
 public:
     int finalValueAfterOperations(vector<string>& operations) {
         int sum = 0;
-        for(auto o : operations){
-            if(o[1] == '+') sum++;
+        int n = operations.size();
+        for(int i = 0; i < n; i++){
+            if(operations[i] == "X++" || operations[i] == "++X") sum++;
             else sum--;
         }
         return sum;
